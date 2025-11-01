@@ -9,4 +9,5 @@ add_executable(LAB1_save ASD/LAB1/LAB1_last_save.cpp)
 add_executable(LAB1_edited ASD/LAB1/LAB1_edited.cpp)
 add_executable(ASD_lecture ASD/ASD_lecture.cpp)
 add_executable(LAB1_R ASD/asdpractice1.cpp)
-add_executable(LAB2 ASD/LAB2.cpp)
+add_executable(LAB2 ASD/LAB2.cpp
+)

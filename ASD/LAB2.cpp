@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include "test.h"
 
 using namespace std;
 
@@ -9,8 +10,6 @@ struct Fio{
     string F;
     string N;
     string O;
-
-    Fio() : F(""), N(""), O("") {}
 };
 
 struct Date{
@@ -50,7 +49,7 @@ void sort_binaries(Key* data, int N){
                     else if(data[i].date.day < data[mid].date.day)right = mid - 1;
 
                     else{
-                        left = right;
+                        left = right - 1;
                         break;
                     }
                 }
@@ -65,28 +64,108 @@ void sort_binaries(Key* data, int N){
 
     }
 
-    for (int i = 1; i < N; i++) {
-        string alh = data[1].fio.F + data[1].fio.N + data[1].fio.O;//цельная строка для переьбора по буквам
-        Key key = data[i];
-        int left = 0, right = i - 1, j = 0;;
-        while(left <= right){
-            int mid = (left + right) / 2;
-            string alh_mid = data[mid].fio.F + data[mid].fio.N + data[mid].fio.O;
-            if(j <= alh.length() and j <= ){//Если 1 фамилия закончится быстрее второй?
-                if(alh[j] < data[mid].fio.F[j]) right = mid - 1;
-                else if (data[i].fio.F[j] > data[mid].fio.F[j]) left = mid +  1;
-                else{
-                    j++;
-                }
 
+}
+
+void sort_binaries_fio(Key* data, int N){
+    for (int i = 1; i < N; i++) {
+        Key key = data[i];
+        int left = 0, right = i - 1, f = 0, n = 0, o = 0;
+        while(left <= right){
+            cout << endl;
+            int mid = (left + right) / 2;
+            if(f < data[i].fio.F.length() or f < data[mid].fio.F.length()) {
+                if (data[i].fio.F[f] > data[mid].fio.F[f])left = mid + 1;
+                else if (data[i].fio.F[f] < data[mid].fio.F[f])right = mid - 1;
+                else f++;
+            }
+            else if(n < data[i].fio.N.length() or n < data[mid].fio.N.length()) {
+                if (data[i].fio.N[n] > data[mid].fio.N[n])left = mid + 1;
+                else if (data[i].fio.N[n] < data[mid].fio.N[n])right = mid - 1;
+                else n++;
+            }
+            else if(o < data[i].fio.O.length() or o < data[mid].fio.O.length()) {
+                if (data[i].fio.O[o] > data[mid].fio.O[o])left = mid + 1;
+                else if (data[i].fio.O[o] < data[mid].fio.O[o])right = mid - 1;
+                else o++;
+            }
+            else{
+                left = mid;
+                break;
             }
         }
+
+        for(int j = i - 1; j >= left; j--){
+            data[j + 1] = data[j];
+        }
+
+        data[left] = key;
+        print(data, N);
     }
 }
 
+void test_sort_binaries_fio(Key* data, int N){
+    for (int i = 1; i < N; i++) {
+        Key key = data[i];
+        int left = 0, right = i - 1, f = 0, n = 0, o = 0;
+        while(left <= right){
+            cout << "индекс элемента - " << i << "\nИндекс буквы Фамилии - " << f
+                 << "\nИндекс буквы Имени - " << n << "\nИндекс буквы Отчества - " << o << endl;
+            for (int c = 0; c < data[i].fio.F.length(); c++) {
+                cout << data[i].fio.F[c];
+            }
+            cout << endl;
+            int mid = (left + right) / 2;
+            if(f < data[i].fio.F.length() or f < data[mid].fio.F.length()) {
+                if (data[i].fio.F[f] > data[mid].fio.F[f]) {
+                    left = mid + 1;
+                    cout << "+\n";
+                }
+                else if (data[i].fio.F[f] < data[mid].fio.F[f]) {
+                    right = mid - 1;
+                    cout << "-\n";
+                }
+                else {
+                    cout << "else f\n";
+                    f++;
+                }
+            }
+            else if(n < data[i].fio.N.length() or n < data[mid].fio.N.length()) {
+                if (data[i].fio.N[n] > data[mid].fio.N[n])left = mid + 1;
+                else if (data[i].fio.N[n] < data[mid].fio.N[n])right = mid - 1;
+                else {
+                    cout << "else n\n";
+                    n++;
+                }
+            }
+            else if(o < data[i].fio.O.length() or o < data[mid].fio.O.length()) {
+                if (data[i].fio.O[o] > data[mid].fio.O[o])left = mid + 1;
+                else if (data[i].fio.O[o] < data[mid].fio.O[o])right = mid - 1;
+                else {
+                    cout << "else o\n";
+                    o++;
+                }
+            }
+            else{
+                left = mid;
+                break;
+            }
+        }
+
+        for(int j = i - 1; j >= left; j--){
+            data[j + 1] = data[j];
+        }
+
+        data[left] = key;
+        cout << "Меж итог: \n";
+        print(data, N);
+    }
+}
+
+
 int main(){
     system("chcp 65001");
-    int N = 7;
+    int N = 10;
     Key* data = new Key[N];
     ifstream file("input_data1");
    /* for (int i = 0; i < N; i++) {
@@ -113,7 +192,7 @@ int main(){
 
     cout << "До сортировки:\n";
     print(data, N);
-    sort_binaries(data, N);
+    sort_binaries_fio(data, N);
     cout << "После сортировки:\n";
     print(data, N);
 

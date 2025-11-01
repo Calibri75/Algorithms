@@ -1,3 +1,9 @@
 C:/university/Projects/ASD/cmake-build-debug/CMakeFiles/ASD.dir
+C:/university/Projects/ASD/cmake-build-debug/CMakeFiles/LAB1.dir
+C:/university/Projects/ASD/cmake-build-debug/CMakeFiles/LAB1_save.dir
+C:/university/Projects/ASD/cmake-build-debug/CMakeFiles/LAB1_edited.dir
+C:/university/Projects/ASD/cmake-build-debug/CMakeFiles/ASD_lecture.dir
+C:/university/Projects/ASD/cmake-build-debug/CMakeFiles/LAB1_R.dir
+C:/university/Projects/ASD/cmake-build-debug/CMakeFiles/LAB2.dir
 C:/university/Projects/ASD/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/university/Projects/ASD/cmake-build-debug/CMakeFiles/rebuild_cache.dir
