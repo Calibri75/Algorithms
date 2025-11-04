@@ -32,7 +32,7 @@ void print(Key* data, int N){
     }
 }
 
-void sort_binaries(Key* data, int N){
+void binaries_sort_date(Key* data, int N){
     for (int i = 1; i < N; i++) {
         Key key = data[i];
         int left = 0, right = i - 1;
@@ -49,7 +49,7 @@ void sort_binaries(Key* data, int N){
                     else if(data[i].date.day < data[mid].date.day)right = mid - 1;
 
                     else{
-                        left = right - 1;
+                        left = mid;
                         break;
                     }
                 }
@@ -67,26 +67,25 @@ void sort_binaries(Key* data, int N){
 
 }
 
-void sort_binaries_fio(Key* data, int N){
+void binaries_sort_fio(Key* data, int N){
     for (int i = 1; i < N; i++) {
         Key key = data[i];
         int left = 0, right = i - 1, f = 0, n = 0, o = 0;
         while(left <= right){
-            cout << endl;
             int mid = (left + right) / 2;
             if(f < data[i].fio.F.length() or f < data[mid].fio.F.length()) {
-                if (data[i].fio.F[f] > data[mid].fio.F[f])left = mid + 1;
-                else if (data[i].fio.F[f] < data[mid].fio.F[f])right = mid - 1;
+                if (data[i].fio.F[f] < data[mid].fio.F[f])left = mid + 1;
+                else if (data[i].fio.F[f] > data[mid].fio.F[f])right = mid - 1;
                 else f++;
             }
             else if(n < data[i].fio.N.length() or n < data[mid].fio.N.length()) {
-                if (data[i].fio.N[n] > data[mid].fio.N[n])left = mid + 1;
-                else if (data[i].fio.N[n] < data[mid].fio.N[n])right = mid - 1;
+                if (data[i].fio.N[n] < data[mid].fio.N[n])left = mid + 1;
+                else if (data[i].fio.N[n] > data[mid].fio.N[n])right = mid - 1;
                 else n++;
             }
             else if(o < data[i].fio.O.length() or o < data[mid].fio.O.length()) {
-                if (data[i].fio.O[o] > data[mid].fio.O[o])left = mid + 1;
-                else if (data[i].fio.O[o] < data[mid].fio.O[o])right = mid - 1;
+                if (data[i].fio.O[o] < data[mid].fio.O[o])left = mid + 1;
+                else if (data[i].fio.O[o] > data[mid].fio.O[o])right = mid - 1;
                 else o++;
             }
             else{
@@ -100,15 +99,14 @@ void sort_binaries_fio(Key* data, int N){
         }
 
         data[left] = key;
-        print(data, N);
     }
 }
 
-void test_sort_binaries_fio(Key* data, int N){
+void binaries_sort_fio_test(Key* data, int N) {
     for (int i = 1; i < N; i++) {
         Key key = data[i];
         int left = 0, right = i - 1, f = 0, n = 0, o = 0;
-        while(left <= right){
+        while (left <= right) {
             cout << "индекс элемента - " << i << "\nИндекс буквы Фамилии - " << f
                  << "\nИндекс буквы Имени - " << n << "\nИндекс буквы Отчества - " << o << endl;
             for (int c = 0; c < data[i].fio.F.length(); c++) {
@@ -116,43 +114,38 @@ void test_sort_binaries_fio(Key* data, int N){
             }
             cout << endl;
             int mid = (left + right) / 2;
-            if(f < data[i].fio.F.length() or f < data[mid].fio.F.length()) {
+            if (f < data[i].fio.F.length() or f < data[mid].fio.F.length()) {
                 if (data[i].fio.F[f] > data[mid].fio.F[f]) {
                     left = mid + 1;
                     cout << "+\n";
-                }
-                else if (data[i].fio.F[f] < data[mid].fio.F[f]) {
+                } else if (data[i].fio.F[f] < data[mid].fio.F[f]) {
                     right = mid - 1;
                     cout << "-\n";
-                }
-                else {
+                } else {
                     cout << "else f\n";
                     f++;
                 }
-            }
-            else if(n < data[i].fio.N.length() or n < data[mid].fio.N.length()) {
+            } else if (n < data[i].fio.N.length() or n < data[mid].fio.N.length()) {
                 if (data[i].fio.N[n] > data[mid].fio.N[n])left = mid + 1;
                 else if (data[i].fio.N[n] < data[mid].fio.N[n])right = mid - 1;
                 else {
                     cout << "else n\n";
                     n++;
                 }
-            }
-            else if(o < data[i].fio.O.length() or o < data[mid].fio.O.length()) {
+            } else if (o < data[i].fio.O.length() or o < data[mid].fio.O.length()) {
                 if (data[i].fio.O[o] > data[mid].fio.O[o])left = mid + 1;
                 else if (data[i].fio.O[o] < data[mid].fio.O[o])right = mid - 1;
                 else {
                     cout << "else o\n";
                     o++;
                 }
-            }
-            else{
+            } else {
                 left = mid;
                 break;
             }
         }
 
-        for(int j = i - 1; j >= left; j--){
+        for (int j = i - 1; j >= left; j--) {
             data[j + 1] = data[j];
         }
 
@@ -162,15 +155,71 @@ void test_sort_binaries_fio(Key* data, int N){
     }
 }
 
+void quick_sort_date(Key* data, int left, int right){// 6 6 6 6 5 8 3 12 12 12
+    if(left < right){                                //i=-1 j = 5
+        int pivot = right, i = left - 1;
+        for(int j = left; j < right; j++){
+            if(data[j].date.year < data[pivot].date.year){
+                i++;
+                swap(data[i], data[j]);
+            }
+            else if(data[j].date.year == data[pivot].date.year){
+                if(data[j].date.month < data[pivot].date.month){
+                    i++;
+                    swap(data[i], data[j]);
+                }
+                else if (data[j].date.month == data[pivot].date.month){
+                    if(data[j].date.day <= data[pivot].date.day){
+                        i++;
+                        swap(data[i], data[j]);
+                    }
+                }
+            }
+        }
+        swap(data[i+1], data[pivot]);
+        quick_sort_date(data, left, i);
+        quick_sort_date(data, i + 2, right);
+    }
+}
+
+void quick_sort_fio(Key* data, int left, int right){
+    if(left < right){
+        int pivot = right, i = left - 1;
+        for(int j = left; j < right; j++){
+            if(data[j].fio.F > data[pivot].fio.F){
+                i++;
+                swap(data[i], data[j]);
+            }
+            else if(data[j].fio.F == data[pivot].fio.F){
+                if(data[j].fio.N > data[pivot].fio.N){
+                    i++;
+                    swap(data[i], data[j]);
+                }
+                else if(data[j].fio.N == data[pivot].fio.N){
+                    if(data[j].fio.O >= data[pivot].fio.O){
+                        i++;
+                        swap(data[i], data[j]);
+                    }
+                }
+            }
+        }
+        swap(data[i+1], data[pivot]);
+        quick_sort_fio(data, left, i);
+        quick_sort_fio(data, i + 2, right);
+    }
+}
+
 
 int main(){
     system("chcp 65001");
     int N = 10;
     Key* data = new Key[N];
     ifstream file("input_data1");
+    //формат 17 04 06 z b a
    /* for (int i = 0; i < N; i++) {
         file >> data[i].date.day >> data[i].date.month >> data[i].date.year >> data[i].fio.F >> data[i].fio.N >> data[i].fio.O;
     }*/
+   //Формат 17.04.06 z b a
     string line;
     for (int i = 0; i < N; i++){
         string part;
@@ -192,10 +241,9 @@ int main(){
 
     cout << "До сортировки:\n";
     print(data, N);
-    sort_binaries_fio(data, N);
+    quick_sort_date(data, 0, N - 1);
     cout << "После сортировки:\n";
     print(data, N);
-
 
     file.close();
     delete[] data;
