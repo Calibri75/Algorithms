@@ -3,6 +3,9 @@
 #include <fstream>
 #include <sstream>
 #include <chrono>
+#include <cstdlib>
+#include <ctime>
+#include <iomanip>
 
 
 using namespace std;
@@ -27,7 +30,6 @@ struct Key {
     Fio fio;
     int num_str;
 };
-
 void print(Key* data, int N){
     for (int i = 0; i < N; i++) {
         cout << i + 1 << ". " << data[i].date.day << "." << data[i].date.month << "." << data[i].date.year << " "
@@ -212,11 +214,14 @@ void quick_sort_fio(Key* data, int left, int right){
 }
 
 
+
+
 int main(){
     system("chcp 65001");
-    int N = 8;
+
+    int N = 10000;
     Key* data = new Key[N];
-    ifstream file("input_data1");
+    ifstream file("input_data1.txt");
     //формат 17 04 06 z b a
    /* for (int i = 0; i < N; i++) {
         file >> data[i].date.day >> data[i].date.month >> data[i].date.year >> data[i].fio.F >> data[i].fio.N >> data[i].fio.O;
