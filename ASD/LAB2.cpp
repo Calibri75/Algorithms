@@ -2,9 +2,11 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <chrono>
 
 
 using namespace std;
+using namespace std::chrono;
 
 struct Fio{
     string F;
@@ -23,6 +25,7 @@ struct Date{
 struct Key {
     Date date;
     Fio fio;
+    int num_str;
 };
 
 void print(Key* data, int N){
@@ -63,7 +66,6 @@ void binaries_sort_date(Key* data, int N){
         data[left] = key;
 
     }
-
 
 }
 
@@ -212,7 +214,7 @@ void quick_sort_fio(Key* data, int left, int right){
 
 int main(){
     system("chcp 65001");
-    int N = 10;
+    int N = 8;
     Key* data = new Key[N];
     ifstream file("input_data1");
     //формат 17 04 06 z b a
@@ -236,16 +238,61 @@ int main(){
         data[i].date.year = stoi(part);
 
         l >> data[i].fio.F >> data[i].fio.N >> data[i].fio.O;
+
+        data[i].num_str = i;
     }
-
-
-    cout << "До сортировки:\n";
-    print(data, N);
-    quick_sort_date(data, 0, N - 1);
-    cout << "После сортировки:\n";
-    print(data, N);
-
     file.close();
+
+    //ВЫВОД БИНАРНЫХ СТАВОК В ФАЙЛ
+    ofstream out_file_bin("out_data_binaries");
+    auto start = high_resolution_clock::now();
+    binaries_sort_date(data, N);
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(end - start);
+    out_file_bin << "СОРТИРОВКА ПО ДАТЕ\n";
+    for(int i = 0; i < N; i++){
+        out_file_bin << data[i].date.day << "." << data[i].date.month << "." << data[i].date.year << " "
+        << data[i].fio.F << " " << data[i].fio.N << " " << data[i].fio.O << " " << data[i].num_str << endl;
+    }
+    out_file_bin << "Время, затраченное на сортировку: " << duration.count() << " мс" << endl;
+
+    start = high_resolution_clock::now();
+    binaries_sort_fio(data, N);
+    end = high_resolution_clock::now();
+    duration = duration_cast<milliseconds>(end - start);
+    out_file_bin << "CОРТИРОВКА ПО ФИО\n";
+    for(int i = 0; i < N; i++){
+        out_file_bin << data[i].date.day << "." << data[i].date.month << "." << data[i].date.year << " "
+                 << data[i].fio.F << " " << data[i].fio.N << " " << data[i].fio.O << " " << data[i].num_str << endl;
+    }
+    out_file_bin << "Время, затраченное на сортировку: " << duration.count() << " мс";
+    out_file_bin.close();
+
+    //ВЫВОД БЫСТРОЙ СОРТИРОВКИ В ФАЙЛ
+    ofstream out_file_quick("out_data_quick");
+    start = high_resolution_clock::now();
+    quick_sort_date(data, 0, N - 1);
+    end = high_resolution_clock::now();
+    duration = duration_cast<milliseconds>(end - start);
+    out_file_quick << "CОРТИРОВКА ПО ДАТЕ\n";
+    for(int i = 0; i < N; i++){
+        out_file_quick << data[i].date.day << "." << data[i].date.month << "." << data[i].date.year << " "
+                       << data[i].fio.F << " " << data[i].fio.N << " " << data[i].fio.O << " " << data[i].num_str << endl;
+    }
+    out_file_quick << "Время, затраченное на сортировку: " << duration.count() << " мс" << endl;
+
+    start = high_resolution_clock::now();
+    quick_sort_fio(data, 0, N - 1);
+    end = high_resolution_clock::now();
+    duration = duration_cast<milliseconds>(end - start);
+    out_file_quick << "CОРТИРОВКА ПО ФИО\n";
+    for(int i = 0; i < N; i++){
+        out_file_quick << data[i].date.day << "." << data[i].date.month << "." << data[i].date.year << " "
+                       << data[i].fio.F << " " << data[i].fio.N << " " << data[i].fio.O << " " << data[i].num_str << endl;
+    }
+    out_file_quick << "Время, затраченное на сортировку: " << duration.count() << " мс";
+    out_file_quick.close();
+
     delete[] data;
 
 }
