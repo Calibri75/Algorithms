@@ -41,204 +41,6 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/university/Projects/ASD/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target ASD
-
-
-#############################################
-# Order-only phony target for ASD
-
-build cmake_object_order_depends_target_ASD: phony || .
-
-build CMakeFiles/ASD.dir/main.cpp.obj: CXX_COMPILER__ASD_unscanned_Debug C$:/university/Projects/ASD/main.cpp || cmake_object_order_depends_target_ASD
-  DEP_FILE = CMakeFiles\ASD.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\ASD.dir
-  OBJECT_FILE_DIR = CMakeFiles\ASD.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target ASD
-
-
-#############################################
-# Link the executable ASD.exe
-
-build ASD.exe: CXX_EXECUTABLE_LINKER__ASD_Debug CMakeFiles/ASD.dir/main.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\ASD.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = ASD.exe
-  TARGET_IMPLIB = libASD.dll.a
-  TARGET_PDB = ASD.exe.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target LAB1
-
-
-#############################################
-# Order-only phony target for LAB1
-
-build cmake_object_order_depends_target_LAB1: phony || .
-
-build CMakeFiles/LAB1.dir/ASD/LAB1/LAB1.cpp.obj: CXX_COMPILER__LAB1_unscanned_Debug C$:/university/Projects/ASD/ASD/LAB1/LAB1.cpp || cmake_object_order_depends_target_LAB1
-  DEP_FILE = CMakeFiles\LAB1.dir\ASD\LAB1\LAB1.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\LAB1.dir
-  OBJECT_FILE_DIR = CMakeFiles\LAB1.dir\ASD\LAB1
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target LAB1
-
-
-#############################################
-# Link the executable LAB1.exe
-
-build LAB1.exe: CXX_EXECUTABLE_LINKER__LAB1_Debug CMakeFiles/LAB1.dir/ASD/LAB1/LAB1.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\LAB1.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = LAB1.exe
-  TARGET_IMPLIB = libLAB1.dll.a
-  TARGET_PDB = LAB1.exe.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target LAB1_save
-
-
-#############################################
-# Order-only phony target for LAB1_save
-
-build cmake_object_order_depends_target_LAB1_save: phony || .
-
-build CMakeFiles/LAB1_save.dir/ASD/LAB1/LAB1_last_save.cpp.obj: CXX_COMPILER__LAB1_save_unscanned_Debug C$:/university/Projects/ASD/ASD/LAB1/LAB1_last_save.cpp || cmake_object_order_depends_target_LAB1_save
-  DEP_FILE = CMakeFiles\LAB1_save.dir\ASD\LAB1\LAB1_last_save.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\LAB1_save.dir
-  OBJECT_FILE_DIR = CMakeFiles\LAB1_save.dir\ASD\LAB1
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target LAB1_save
-
-
-#############################################
-# Link the executable LAB1_save.exe
-
-build LAB1_save.exe: CXX_EXECUTABLE_LINKER__LAB1_save_Debug CMakeFiles/LAB1_save.dir/ASD/LAB1/LAB1_last_save.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\LAB1_save.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = LAB1_save.exe
-  TARGET_IMPLIB = libLAB1_save.dll.a
-  TARGET_PDB = LAB1_save.exe.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target LAB1_edited
-
-
-#############################################
-# Order-only phony target for LAB1_edited
-
-build cmake_object_order_depends_target_LAB1_edited: phony || .
-
-build CMakeFiles/LAB1_edited.dir/ASD/LAB1/LAB1_edited.cpp.obj: CXX_COMPILER__LAB1_edited_unscanned_Debug C$:/university/Projects/ASD/ASD/LAB1/LAB1_edited.cpp || cmake_object_order_depends_target_LAB1_edited
-  DEP_FILE = CMakeFiles\LAB1_edited.dir\ASD\LAB1\LAB1_edited.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\LAB1_edited.dir
-  OBJECT_FILE_DIR = CMakeFiles\LAB1_edited.dir\ASD\LAB1
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target LAB1_edited
-
-
-#############################################
-# Link the executable LAB1_edited.exe
-
-build LAB1_edited.exe: CXX_EXECUTABLE_LINKER__LAB1_edited_Debug CMakeFiles/LAB1_edited.dir/ASD/LAB1/LAB1_edited.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\LAB1_edited.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = LAB1_edited.exe
-  TARGET_IMPLIB = libLAB1_edited.dll.a
-  TARGET_PDB = LAB1_edited.exe.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target ASD_lecture
-
-
-#############################################
-# Order-only phony target for ASD_lecture
-
-build cmake_object_order_depends_target_ASD_lecture: phony || .
-
-build CMakeFiles/ASD_lecture.dir/ASD/ASD_lecture.cpp.obj: CXX_COMPILER__ASD_lecture_unscanned_Debug C$:/university/Projects/ASD/ASD/ASD_lecture.cpp || cmake_object_order_depends_target_ASD_lecture
-  DEP_FILE = CMakeFiles\ASD_lecture.dir\ASD\ASD_lecture.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\ASD_lecture.dir
-  OBJECT_FILE_DIR = CMakeFiles\ASD_lecture.dir\ASD
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target ASD_lecture
-
-
-#############################################
-# Link the executable ASD_lecture.exe
-
-build ASD_lecture.exe: CXX_EXECUTABLE_LINKER__ASD_lecture_Debug CMakeFiles/ASD_lecture.dir/ASD/ASD_lecture.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\ASD_lecture.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = ASD_lecture.exe
-  TARGET_IMPLIB = libASD_lecture.dll.a
-  TARGET_PDB = ASD_lecture.exe.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target LAB1_R
-
-
-#############################################
-# Order-only phony target for LAB1_R
-
-build cmake_object_order_depends_target_LAB1_R: phony || .
-
-build CMakeFiles/LAB1_R.dir/ASD/asdpractice1.cpp.obj: CXX_COMPILER__LAB1_R_unscanned_Debug C$:/university/Projects/ASD/ASD/asdpractice1.cpp || cmake_object_order_depends_target_LAB1_R
-  DEP_FILE = CMakeFiles\LAB1_R.dir\ASD\asdpractice1.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\LAB1_R.dir
-  OBJECT_FILE_DIR = CMakeFiles\LAB1_R.dir\ASD
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target LAB1_R
-
-
-#############################################
-# Link the executable LAB1_R.exe
-
-build LAB1_R.exe: CXX_EXECUTABLE_LINKER__LAB1_R_Debug CMakeFiles/LAB1_R.dir/ASD/asdpractice1.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\LAB1_R.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = LAB1_R.exe
-  TARGET_IMPLIB = libLAB1_R.dll.a
-  TARGET_PDB = LAB1_R.exe.dbg
-
-# =============================================================================
 # Object build statements for EXECUTABLE target LAB2
 
 
@@ -247,11 +49,23 @@ build LAB1_R.exe: CXX_EXECUTABLE_LINKER__LAB1_R_Debug CMakeFiles/LAB1_R.dir/ASD/
 
 build cmake_object_order_depends_target_LAB2: phony || .
 
-build CMakeFiles/LAB2.dir/ASD/LAB2.cpp.obj: CXX_COMPILER__LAB2_unscanned_Debug C$:/university/Projects/ASD/ASD/LAB2.cpp || cmake_object_order_depends_target_LAB2
-  DEP_FILE = CMakeFiles\LAB2.dir\ASD\LAB2.cpp.obj.d
+build CMakeFiles/LAB2.dir/LAB2/LAB2.cpp.obj: CXX_COMPILER__LAB2_unscanned_Debug C$:/university/Projects/ASD/LAB2/LAB2.cpp || cmake_object_order_depends_target_LAB2
+  DEP_FILE = CMakeFiles\LAB2.dir\LAB2\LAB2.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\LAB2.dir
-  OBJECT_FILE_DIR = CMakeFiles\LAB2.dir\ASD
+  OBJECT_FILE_DIR = CMakeFiles\LAB2.dir\LAB2
+
+build CMakeFiles/LAB2.dir/LAB2/src/file_work/file_work.cpp.obj: CXX_COMPILER__LAB2_unscanned_Debug C$:/university/Projects/ASD/LAB2/src/file_work/file_work.cpp || cmake_object_order_depends_target_LAB2
+  DEP_FILE = CMakeFiles\LAB2.dir\LAB2\src\file_work\file_work.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\LAB2.dir
+  OBJECT_FILE_DIR = CMakeFiles\LAB2.dir\LAB2\src\file_work
+
+build CMakeFiles/LAB2.dir/LAB2/src/sorts/sorts.cpp.obj: CXX_COMPILER__LAB2_unscanned_Debug C$:/university/Projects/ASD/LAB2/src/sorts/sorts.cpp || cmake_object_order_depends_target_LAB2
+  DEP_FILE = CMakeFiles\LAB2.dir\LAB2\src\sorts\sorts.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\LAB2.dir
+  OBJECT_FILE_DIR = CMakeFiles\LAB2.dir\LAB2\src\sorts
 
 
 # =============================================================================
@@ -261,7 +75,7 @@ build CMakeFiles/LAB2.dir/ASD/LAB2.cpp.obj: CXX_COMPILER__LAB2_unscanned_Debug C
 #############################################
 # Link the executable LAB2.exe
 
-build LAB2.exe: CXX_EXECUTABLE_LINKER__LAB2_Debug CMakeFiles/LAB2.dir/ASD/LAB2.cpp.obj
+build LAB2.exe: CXX_EXECUTABLE_LINKER__LAB2_Debug CMakeFiles/LAB2.dir/LAB2/LAB2.cpp.obj CMakeFiles/LAB2.dir/LAB2/src/file_work/file_work.cpp.obj CMakeFiles/LAB2.dir/LAB2/src/sorts/sorts.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\LAB2.dir
@@ -297,18 +111,6 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build ASD: phony ASD.exe
-
-build ASD_lecture: phony ASD_lecture.exe
-
-build LAB1: phony LAB1.exe
-
-build LAB1_R: phony LAB1_R.exe
-
-build LAB1_edited: phony LAB1_edited.exe
-
-build LAB1_save: phony LAB1_save.exe
-
 build LAB2: phony LAB2.exe
 
 # =============================================================================
@@ -319,7 +121,7 @@ build LAB2: phony LAB2.exe
 #############################################
 # Folder: C:/university/Projects/ASD/cmake-build-debug
 
-build all: phony ASD.exe LAB1.exe LAB1_save.exe LAB1_edited.exe ASD_lecture.exe LAB1_R.exe LAB2.exe
+build all: phony LAB2.exe
 
 # =============================================================================
 # Built-in targets
