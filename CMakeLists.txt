@@ -3,11 +3,11 @@ project(ASD)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(ASD main.cpp)
-add_executable(LAB1 ASD/LAB1/LAB1.cpp)
-add_executable(LAB1_save ASD/LAB1/LAB1_last_save.cpp)
-add_executable(LAB1_edited ASD/LAB1/LAB1_edited.cpp)
-add_executable(ASD_lecture ASD/ASD_lecture.cpp)
-add_executable(LAB1_R ASD/asdpractice1.cpp)
-add_executable(LAB2 ASD/LAB2.cpp
+
+add_executable(LAB2 LAB2/LAB2.cpp
+        LAB2/src/file_work/file_work.cpp
+        LAB2/src/file_work/file_work.h
+        LAB2/src/sorts/sorts.cpp
+        LAB2/src/sorts/sorts.h
+        LAB2/src/structs/structs.h
 )
