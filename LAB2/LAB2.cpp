@@ -20,21 +20,25 @@ int main() {
     system("chcp 65001");
 
     int N = 4;
-    auto start, end;
     vector<Key> data(N);
 
-    read_file("data.txt", data, N);
-
-    start = high_resolution_clock::now();
+    read_file("../LAB2/static/in/input_10000.txt", data, N);
+    auto start = high_resolution_clock::now();
     binaries_sort(data, N);
-    end = high_resolution_clock::now();
-    milliseconds duration = duration_cast<milliseconds>(end - start);
+    auto end = high_resolution_clock::now();
+    milliseconds duration1 = duration_cast<milliseconds>(end - start);
+    write_file("../LAB2/static/out/sort_binaries", data, N, duration1);
 
 
+    read_file("../LAB2/static/in/input_10000.txt", data, N);
     start = high_resolution_clock::now();
     quick_sort(data, 0, N - 1);
     end = high_resolution_clock::now();
-    duration = duration_cast<milliseconds>(end - start);
+    milliseconds duration2 = duration_cast<milliseconds>(end - start);
+    write_file("../LAB2/static/out/sort_quick", data, N, duration2);
+
+    cout << "Quick_sort: " << duration1 << endl;
+    cout << "Binaries_sort: " << duration2 << endl;
 
 }
 
