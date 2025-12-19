@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "ASD",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -41,6 +43,13 @@
 					"id" : "LAB2::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-LAB2-Debug-65e8d25fbddf4b85ac29.json",
 					"name" : "LAB2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LAB3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LAB3-Debug-e7cacf516592d07f77b7.json",
+					"name" : "LAB3",
 					"projectIndex" : 0
 				}
 			]
