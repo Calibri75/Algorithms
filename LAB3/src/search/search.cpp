@@ -3,7 +3,7 @@
 
 
 person homo_binarySearch(const vector <person>& data, int key){
-    int n = data.size();
+    size_t n = data.size();
 
     int step = 1;
     while(step < n) step <<= 1;
