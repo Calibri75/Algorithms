@@ -85,6 +85,45 @@ build LAB2.exe: CXX_EXECUTABLE_LINKER__LAB2_Debug CMakeFiles/LAB2.dir/LAB2/LAB2.
   TARGET_IMPLIB = libLAB2.dll.a
   TARGET_PDB = LAB2.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target LAB3
+
+
+#############################################
+# Order-only phony target for LAB3
+
+build cmake_object_order_depends_target_LAB3: phony || .
+
+build CMakeFiles/LAB3.dir/LAB3/src/search/search.cpp.obj: CXX_COMPILER__LAB3_unscanned_Debug C$:/university/Projects/ASD/LAB3/src/search/search.cpp || cmake_object_order_depends_target_LAB3
+  DEP_FILE = CMakeFiles\LAB3.dir\LAB3\src\search\search.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\LAB3.dir
+  OBJECT_FILE_DIR = CMakeFiles\LAB3.dir\LAB3\src\search
+
+build CMakeFiles/LAB3.dir/LAB3/LAB3.cpp.obj: CXX_COMPILER__LAB3_unscanned_Debug C$:/university/Projects/ASD/LAB3/LAB3.cpp || cmake_object_order_depends_target_LAB3
+  DEP_FILE = CMakeFiles\LAB3.dir\LAB3\LAB3.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\LAB3.dir
+  OBJECT_FILE_DIR = CMakeFiles\LAB3.dir\LAB3
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target LAB3
+
+
+#############################################
+# Link the executable LAB3.exe
+
+build LAB3.exe: CXX_EXECUTABLE_LINKER__LAB3_Debug CMakeFiles/LAB3.dir/LAB3/src/search/search.cpp.obj CMakeFiles/LAB3.dir/LAB3/LAB3.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\LAB3.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = LAB3.exe
+  TARGET_IMPLIB = libLAB3.dll.a
+  TARGET_PDB = LAB3.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -113,6 +152,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build LAB2: phony LAB2.exe
 
+build LAB3: phony LAB3.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -121,7 +162,7 @@ build LAB2: phony LAB2.exe
 #############################################
 # Folder: C:/university/Projects/ASD/cmake-build-debug
 
-build all: phony LAB2.exe
+build all: phony LAB2.exe LAB3.exe
 
 # =============================================================================
 # Built-in targets

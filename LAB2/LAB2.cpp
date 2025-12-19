@@ -19,10 +19,10 @@ using namespace std::chrono;
 int main() {
     system("chcp 65001");
 
-    int N = 4;
+    int N = 100000;
     vector<Key> data(N);
 
-    read_file("../LAB2/static/in/input_10000.txt", data, N);
+    read_file("../LAB2/static/in/input_100000.txt", data, N);
     auto start = high_resolution_clock::now();
     binaries_sort(data, N);
     auto end = high_resolution_clock::now();
@@ -30,7 +30,7 @@ int main() {
     write_file("../LAB2/static/out/sort_binaries", data, N, duration1);
 
 
-    read_file("../LAB2/static/in/input_10000.txt", data, N);
+    read_file("../LAB2/static/in/input_100000.txt", data, N);
     start = high_resolution_clock::now();
     quick_sort(data, 0, N - 1);
     end = high_resolution_clock::now();
