@@ -4,22 +4,18 @@
 
 person homo_binarySearch(const vector <person>& data, int key){
     size_t n = data.size();
-
+    int m[] = {2, 4, 8, 16};
     int step = 1;
     while(step < n) step <<= 1;
     step >>= 1;
 
-    int delta = 0;
-    int next_step = step;
+    int pos = -1;
+
     while(step > 0){
-        delta = step - next_step;
-        int i = step + delta;
-        if(key <= data[i - 1].application){
-            if(key == data[i - 1].application) return data[i - 1];
-            step >>= 1;
-            next_step = step;
+        if(pos + step < n && data[step + pos] < key){
+            pos += step;
         }
-        next_step >>= 1;
+        step >>= 1;
     }
 
     return{};
