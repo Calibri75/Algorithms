@@ -1,16 +1,21 @@
-#include <iostream>
-#include "src/search/search.hpp"
+#include "src/search/search.h"
 #include "src/struct/struct.h"
+#include "src/file_generation/file_generation.h"
+#include "src/file_work/LAB3_file_work.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 int main(){
-    vector <person> data;
-    person a = {{"z", "v", "a"}, {1, 2 ,3}, 1};
-    person b = {{"f", "v", "a"}, {1, 2 ,3}, 2};
-    person c = {{"g", "v", "a"}, {1, 2 ,3}, 3};
-    data.push_back(a);
-    data.push_back(b);
-    data.push_back(c);
+    int n = 1000;
+    vector <person> data(n);
+    generation("../LAB3/static/output/input_file.txt");
 
-    person i = homo_binarySearch(data, 2);
-    cout << i.fio.name;
+    file_read(data, n,"input_file");
+
+    key found_key = homo_binarySearch(data, 2);
+
+    write_file(found_key, n, "output.txt");
+
 }

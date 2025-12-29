@@ -26,6 +26,7 @@ struct person{
     FIO fio;
     DATE date;
     int application{};
+    int stroke;
 };
 
 #endif //ASD_STRUCT_H
