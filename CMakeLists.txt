@@ -13,3 +13,4 @@ add_executable(LAB3
         LAB3/src/file_generation/file_generetion.cpp
         LAB3/src/file_generation/file_generation.h
 )
+

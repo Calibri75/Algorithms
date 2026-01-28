@@ -8,6 +8,11 @@ using namespace std;
 struct key{
     int index;
     int steps;
+
+    key(){
+        index = -1;
+        steps = -1;
+    }
 };
 
 struct FIO{

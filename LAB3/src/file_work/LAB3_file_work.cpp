@@ -32,9 +32,8 @@ bool write_file(key found_key, int n, const string& filename){
         return false;
     }
 
-    for(int i = 0; i < n; i++){
-        file << found_key.index << " " << found_key.steps << "\n";
-    }
+    file << "Индекс: " << found_key.index << endl;
+    file << "Количество шагов: " << found_key.steps << endl;
 
     return true;
 }

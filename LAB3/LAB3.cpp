@@ -8,14 +8,15 @@
 using namespace std;
 
 int main(){
-    int n = 1000;
+    system("chcp 65001");
+    int n = 10;
     vector <person> data(n);
-    generation("../LAB3/static/output/input_file.txt");
+    //generation("../LAB3/static/input/input_file.txt");
 
-    file_read(data, n,"input_file");
+    file_read(data, n,"../LAB3/static/input/input_file.txt");
 
-    key found_key = homo_binarySearch(data, 2);
+    key found_key = homo_binarySearch(data, 1584);
 
-    write_file(found_key, n, "output.txt");
+    write_file(found_key, n, "../LAB3/static/output/output.txt");
 
 }

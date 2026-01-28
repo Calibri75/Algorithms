@@ -199,3 +199,79 @@ int main() {
            temp = temp -> next;
        }
    }*/
+
+/*void difference2(const List& list2) {
+        if (!head || !list2.head) return;
+
+        Node* temp = head;
+        Node* temp1= list2.head;
+
+        do {
+            if (temp->data < temp1->data) {
+                temp = temp->next;
+            } else if (temp->data > temp1->data) {
+                temp1 = temp1->next;
+                if (temp1 == list2.head) break; // дошли до конца list2
+            } else {
+                Node* temp2 = temp;
+                temp = temp->next;
+
+                if (temp2 == head)
+                    head = head->next;
+
+                // если удаляем последний узел
+                if (temp2->next == temp2) {
+                    delete temp2;
+                    head = nullptr;
+                    return;
+                }
+                temp2->prev->next = temp2->next;
+                temp2->next->prev = temp2->prev;
+                delete temp2;
+
+                temp1 = temp1->next;
+                if (temp1 == list2.head) break;
+            }
+        } while (temp != head);
+    }
+
+
+};*/
+
+/*void difference2(const List& list2) {
+        if (!head || !list2.head) return;
+
+        Node* temp = head;
+        Node* temp1= list2.head;
+
+        do {
+            if (temp->data < temp1->data) {
+                temp = temp->next;
+            } else if (temp->data > temp1->data) {
+                temp1 = temp1->next;
+                if (temp1 == list2.head) break; // дошли до конца list2
+            } else {
+                Node* temp2 = temp;
+                temp = temp->next;
+
+                if (temp2 == head)
+                    head = head->next;
+
+                // если удаляем последний узел
+                if (temp2->next == temp2) {
+                    delete temp2;
+                    head = nullptr;
+                    return;
+                }
+                temp2->prev->next = temp2->next;
+                temp2->next->prev = temp2->prev;
+                delete temp2;
+
+                temp1 = temp1->next;
+                if (temp1 == list2.head) break;
+            }
+        } while (temp != head);
+    }
+
+
+};*/
