@@ -10,8 +10,8 @@ struct key{
     int steps;
 
     key(){
-        index = -1;
-        steps = -1;
+        index = 0;
+        steps = 0;
     }
 };
 

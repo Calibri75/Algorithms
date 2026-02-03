@@ -24,7 +24,7 @@ bool file_read(vector <person>& data, int n, const string& filename){
     return true;
 }
 
-bool write_file(key found_key, int n, const string& filename){
+bool write_file(key found_key, int n, const string& filename, int key_f){
     ofstream file(filename);
 
     if(!file.is_open()){
@@ -32,6 +32,7 @@ bool write_file(key found_key, int n, const string& filename){
         return false;
     }
 
+    file << "Ключ поиск: " << key_f << endl;
     file << "Индекс: " << found_key.index << endl;
     file << "Количество шагов: " << found_key.steps << endl;
 

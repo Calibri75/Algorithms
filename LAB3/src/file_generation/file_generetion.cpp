@@ -43,7 +43,7 @@ void generation(const string& filename){
         patronymic[0] = static_cast<char>(toupper(static_cast<unsigned char>(patronymic[0])));
 
         file << dist_day(gen) << " " << dist_month(gen) << " " << dist_year(gen) << " "
-        << name << " " << surname << " " << patronymic << " " << dist_application(gen) << " " << "\n";
+        << name << " " << surname << " " << patronymic << " " << i << " " << "\n";
 
     }
 }
